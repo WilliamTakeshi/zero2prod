@@ -57,7 +57,7 @@ pub fn get_configuration() -> Result<Settings, config::ConfigError> {
     Config::builder()
         .add_source(File::from(configuration_directory.join("base")))
         .add_source(File::from(
-            configuration_directory.join(environment.as_str())
+            configuration_directory.join(environment.as_str()),
         ))
         .build()?
         .try_deserialize()
